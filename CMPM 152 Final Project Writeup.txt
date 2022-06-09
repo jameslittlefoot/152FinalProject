@@ -1,0 +1,45 @@
+CMPM 152 Final Project Writeup
+Members: James Nguyen
+         Julian Liaw
+
+
+1. What are you trying to sonify? Why?
+
+   The dataset we chose is a collection of win loss records and the scores between the Celtics and the Warriors. We chose this data set as 1 it interested in us because of our interest in basketball and 2 because we thought that the data set would be interesting to hear a score keeping set sonified to match.
+2. Discuss your process of data organization and formatting.
+   
+   For our data organization we first extracted the features of the data set using the audio extraction features previously learned in the class. By normalizing a lot of these features and placing them into datasets that we could use we then could create 4 sonifications. We chose pitch, loudness, register, tempo, and harmony. 
+   
+
+3. Justify your parameter mappings. For each data parameter, explain why it is best suited for the     selected sonic feature (be as specific as possible).
+
+   With the pitch we chose the octave between 48 and 88 and used the warriors score in order to symbolize this. By choosing their score we were able to create computable data set to use in pure data.
+
+   With the loudness we calculated the difference in the scores to represent how each game went. The bigger the difference the louder the sound gets thus being accurately represented.
+
+   For the tempo, we once again used the warriors score in order to process this. We mapped from a range of 100 to 50 and normalized the dataset in order to create a matching tempo which gets faster with each warrior win. When the tempo decreases you can assume that's a celtics win.
+
+   Finally for the harmony we took the 2 datasets with the win loss ratio. Here the data had to be reformatted for it to readable by pure data so in this case we counted each win as a 1 and added to an index. When they loss we reset the index to 0. We recorded this on both teams and then used a tertiary array to compare the 2 data sets and choose the higher of the 2 on each iteration. When the there was a win streak the number would gradually increase signalling harmony and when it reset it signals that the other team would win and would increase accordingly. 
+
+4. How do you expect a listener to perceive the overall sound?
+   
+   The listener should perceive the overall sound as record of the win losses between the 2 teams. Because we used the warriors as a base we can percieve an increases to any of the 4 audio parameters as a postive net win for the warriors and vice versa any decrease as a net win for the celtics.
+
+5. What is/are the most important data parameter(s) you are trying to convey, and how does this appear in the audio?
+
+    Tempo is probably the most important data parameter that we are trying to convey because it is signified most clearly with the data set and is the most straight forward. When the tempo increases it signifies a win and decreases for a loss on the warriors.
+
+6. How is the sonification advantageous over other means of data presentation?
+  
+   Sonfication is advantageous because it allows us to audibly hear data set changes in a short time span and condense them to hear an entire data set over a small period of time. Thus it allows us to reasonably compute data and compare them over a single audio subset rather than having a machine or person visibly compare the data.
+
+7. Are there challenges in perceiving/interpreting your sonification? How much learning do you think would be involved in understanding it?
+
+   There definitely are challenges interpreting our sonfication. For one without context and telling you what we used as a baseline score a listener would have no idea what sound parameters mean what. It would take a fair amount of learning as audio sonfication is not a very well known means of data representation, thus it means that a listener would have to have some knowledge of existing parameters already and correlate them with data we provided.
+
+8. In what setting would the sonification be most effective? Who would benefit from the sonification?
+    
+    A setting that would be most beneficial would be in machine learning where one can give the machine/AI 
+    the context behind the data so that it can be read efficiently. As machines do not need to understand context it can use the audio
+    to calculate the differences in the sonfication rather than leaving it up to interpretation. The sonfication would benefit those who
+    seek to compare datas not only between the 2 teams that we have but also use this data set with any similar inputs namely sports score keeping.
